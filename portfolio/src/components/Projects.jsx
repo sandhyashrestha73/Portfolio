@@ -1,5 +1,3 @@
-
-
 const PROJECTS = [
   {
     number: '01',
@@ -9,86 +7,126 @@ const PROJECTS = [
     tags: ['React', 'CSS', 'localStorage'],
     accent: '#7c6aff',
     github: 'https://github.com/sandhya',
-    live:   '#',
-    emoji:  '✅',
+    live: '#',
+    emoji: '✅',
   },
   {
     number: '02',
     title: 'Weather App',
     description:
-      'Fetches real-time weather data using the OpenWeatherMap API. Displays temperature, humidity, and conditions for any searched city with a clean card-based UI.',
+      'Fetches real-time weather data using the OpenWeatherMap API. Displays temperature, humidity, and conditions for any searched city.',
     tags: ['JavaScript', 'REST API', 'CSS'],
     accent: '#00d9c0',
     github: 'https://github.com/sandhya',
-    live:   '#',
-    emoji:  '🌤️',
+    live: '#',
+    emoji: '🌤️',
   },
   {
     number: '03',
     title: 'Portfolio Website',
     description:
-      'This very site — a personal portfolio built with React and Vite, featuring smooth scrolling, responsive layout, and a dark design system built from scratch.',
-    tags: ['React', 'Vite', 'CSS Variables'],
+      'A personal portfolio built with React and Vite featuring smooth scrolling and responsive design.',
+    tags: ['React', 'Vite', 'CSS'],
     accent: '#b39eff',
     github: 'https://github.com/sandhya',
-    live:   '#',
-    emoji:  '🚀',
+    live: '#',
+    emoji: '🚀',
   },
 ]
 
 export default function Projects() {
   return (
-    <section className="projects" id="projects">
-      <div className="container">
-        <div className="projects__header">
-          <span className="section-label">Projects</span>
-          <h2 className="section-title">Things I've built</h2>
-          <p className="section-desc">
+    <section id="projects" className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-12">
+          <span className="text-sm uppercase tracking-widest text-teal-600 font-semibold">
+            Projects
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+            Things I've built
+          </h2>
+          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
             Real projects that helped me grow as a developer — each one a step
             forward in building functional, user-friendly applications.
           </p>
         </div>
 
-        <div className="projects__list">
-          {PROJECTS.map(({ number, title, description, tags, accent, github, live, emoji }) => (
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {PROJECTS.map((p) => (
             <article
-              key={number}
-              className="project-card"
-              style={{ '--card-accent': accent }}
+              key={p.number}
+              className="relative rounded-2xl p-6 bg-white shadow-md hover:shadow-xl transition group overflow-hidden"
             >
-              <div className="project-card__top">
-                <div className="project-card__emoji">{emoji}</div>
-                <div className="project-card__links">
-                  <a href={github} target="_blank" rel="noopener noreferrer" className="project-card__link" aria-label="GitHub">
+              {/* Accent glow */}
+              <div
+                className="absolute -top-10 -right-10 w-32 h-32 blur-3xl opacity-30 rounded-full"
+                style={{ background: p.accent }}
+              />
+
+              {/* Top row */}
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-2xl">{p.emoji}</span>
+
+                <div className="flex gap-3 text-gray-500">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    className="hover:text-black transition"
+                  >
                     <GitHubIcon />
                   </a>
-                  <a href={live} target="_blank" rel="noopener noreferrer" className="project-card__link" aria-label="Live demo">
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    className="hover:text-black transition"
+                  >
                     <ExternalIcon />
                   </a>
                 </div>
               </div>
 
-              <span className="project-card__num">{number}</span>
-              <h3 className="project-card__title">{title}</h3>
-              <p  className="project-card__desc">{description}</p>
+              {/* Number */}
+              <span className="text-sm font-bold text-gray-400">
+                {p.number}
+              </span>
 
-              <div className="project-card__tags">
-                {tags.map(t => (
-                  <span key={t} className="project-card__tag">{t}</span>
+              {/* Title */}
+              <h3 className="text-xl font-semibold mt-1 mb-2 group-hover:text-teal-600 transition">
+                {p.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                {p.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600"
+                  >
+                    {t}
+                  </span>
                 ))}
               </div>
             </article>
           ))}
         </div>
 
-        <div className="projects__more">
+        {/* Footer CTA */}
+        <div className="text-center mt-10">
           <a
             href="https://github.com/sandhya"
             target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--ghost"
+            className="inline-flex items-center gap-2 px-6 py-3 border rounded-lg hover:bg-gray-100 transition"
           >
-            <GitHubIcon /> See all on GitHub
+            <GitHubIcon />
+            See all on GitHub
           </a>
         </div>
       </div>
@@ -96,9 +134,17 @@ export default function Projects() {
   )
 }
 
+/* Icons */
 function GitHubIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
     </svg>
   )
@@ -106,7 +152,14 @@ function GitHubIcon() {
 
 function ExternalIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
       <polyline points="15 3 21 3 21 9" />
       <line x1="10" y1="14" x2="21" y2="3" />
