@@ -121,7 +121,7 @@ export default function Projects() {
         {/* Footer CTA */}
         <div className="text-center mt-10">
           <a
-            href="https://github.com/sandhya"
+            href="https://github.com/sandhyashrestha73"
             target="_blank"
             className="inline-flex items-center gap-2 px-6 py-3 border rounded-lg hover:bg-gray-100 transition"
           >
