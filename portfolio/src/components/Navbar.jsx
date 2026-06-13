@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import logo from '../logo.png'
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
@@ -32,8 +32,8 @@ export default function Navbar() {
           href="#home"
           onClick={close}
           className="text-xl font-bold text-gray-900"
-        >
-          SS<span className="text-teal-600">.</span>
+        > SANDHYA
+        <span className="text-teal-600">.</span>
         </a>
 
         {/* Desktop Nav */}

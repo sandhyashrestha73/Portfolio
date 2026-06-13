@@ -1,3 +1,5 @@
+import profile from '../profile.jpeg';
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center px-4 overflow-hidden">
@@ -57,7 +59,13 @@ export default function Hero() {
 
           {/* Ring */}
           <div className="w-40 h-40 rounded-full border-4 border-teal-500 flex items-center justify-center relative">
-            <div className="text-3xl font-bold text-gray-700">SS</div>
+            <div className="w-40 h-40 rounded-full border-4 border-teal-500 overflow-hidden">
+              <img
+                src={profile}
+                alt="Profile"
+                  className="w-full h-full object-cover"
+                 />
+            </div>
           </div>
 
           {/* Badge */}
