@@ -12,14 +12,14 @@ const PROJECTS = [
   },
   {
     number: '02',
-    title: 'Weather App',
+    title: 'Supermarket Billing System',
     description:
-      'Fetches real-time weather data using the OpenWeatherMap API. Displays temperature, humidity, and conditions for any searched city.',
-    tags: ['JavaScript', 'REST API', 'CSS'],
-    accent: '#00d9c0',
+      'A console-based billing application that was developed to manage supermarket sales efficiently. The system allowed users to add products, calculate total bills, apply discounts, and generate invoices. .',
+    tags: ['C Language', 'Console Application', 'File Handling'],
+    accent: '#b39eff',
     github: 'https://github.com/sandhya',
     live: '#',
-    emoji: '🌤️',
+    emoji: '📑',
   },
   {
     number: '03',
