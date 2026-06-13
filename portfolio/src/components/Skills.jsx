@@ -6,22 +6,22 @@ const SKILLS = [
       { name: 'HTML5', level: 90, color: '#e34f26' },
       { name: 'CSS3', level: 85, color: '#1572b6' },
       { name: 'JavaScript', level: 75, color: '#f7df1e' },
-      { name: 'React', level: 60, color: '#61dafb' },
+      { name: 'React', level: 80, color: '#61dafb' },
     ],
   },
   {
     category: 'Tools & Workflow',
     icon: '⬡',
     items: [
-      { name: 'Git & GitHub', level: 70, color: '#f05032' },
+      { name: 'Git & GitHub', level: 90, color: '#f05032' },
       { name: 'VS Code', level: 88, color: '#007acc' },
-      { name: 'Vite', level: 55, color: '#646cff' },
+      { name: 'Vite', level: 75, color: '#646cff' },
       { name: 'Responsive UI', level: 80, color: '#00d9c0' },
     ],
   },
 ]
 
-const LEARNING = ['Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'TypeScript']
+const LEARNING = ['Node.js', 'Express.js', 'MongoDB', 'REST APIs']
 
 export default function Skills() {
   return (

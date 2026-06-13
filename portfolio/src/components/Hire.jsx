@@ -48,8 +48,8 @@ export default function HireMe() {
             <div>
               <h3 className="text-xl font-semibold mb-2">Contact</h3>
               <p className="text-gray-600">
-                Email: sandhya@example.com <br />
-                Location: Kathmandu, Nepal 🇳🇵
+                Email: sandhyashrestha431@gmail.com <br />
+                Location: Nawalpur, Nepal 🇳🇵
               </p>
             </div>
 
